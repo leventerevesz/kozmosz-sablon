@@ -48,9 +48,9 @@
 
 \section{Az Apollo-program}
 
-Az Apollo-program az Egyesült Államok második – a hosszas előkészítő fázisa miatt a repülések sorrendjét tekintve harmadik – emberek részvételével végrehajtott űrprogramja volt, amely 1961 és 1972 között zajlott. A program célja kettős volt: a fő célként az ember Holdra juttatása fogalmazódott meg, mögöttes politikai célként pedig a hidegháború által életre hívott űrversenyben az USA vesztes pozíciójának megfordítása, a nemzeti presztízs helyreállítása volt a célkitűzés.
+Az Apollo-program az Egyesült Államok második – a hosszas előkészítő fázisa miatt a repülések sorrendjét tekintve harmadik – emberek részvételével végrehajtott űrprogramja volt, amely 1961 és 1972 között zajlott. A program célja kettős volt: a fő célként az ember Holdra juttatása fogalmazódott meg, mögöttes politikai célként pedig a hidegháború által életre hívott űrversenyben az USA vesztes pozíciójának megfordítása, a nemzeti presztízs helyreállítása volt a célkitűzés \cite{Wettl2004}.
 
-A holdprogram hivatalos bejelentése 1961. május 25-én John F. Kennedy elnök kongresszusi beszédében történt, ezt tekintjük az Apollo-program hivatalos kezdetének. A beszédben Kennedy 9 éves határidőt tűzött ki a program megvalósításra. A célt 1969. július 21-én, az Apollo–11 űrhajósainak, Neil Armstrongnak és Buzz Aldrinnak a Holdra lépésével sikerült teljesíteni. Őket még további öt űrhajóspáros követte, így összesen hat sikeres holdra szállást teljesítettek a NASA űrhajósai. Armstrongék holdra szállását négy, űrhajósokkal végrehajtott tesztrepülés előzte meg, míg egy sikertelen holdutazás is része volt a programnak. A repülések mellett egy tragédia is beárnyékolta az Apollo-programot, az első tesztrepülés előtti előkészületek közben három űrhajós, Gus Grissom, Ed White és Roger Chaffee halt meg az űrkabinjukban kitört tűz következtében.
+A holdprogram hivatalos bejelentése 1961. május 25-én John F. Kennedy elnök kongresszusi beszédében történt, ezt tekintjük az Apollo-program hivatalos kezdetének \cite{Cindy1986}. A beszédben Kennedy 9 éves határidőt tűzött ki a program megvalósításra. A célt 1969. július 21-én, az Apollo–11 űrhajósainak, Neil Armstrongnak és Buzz Aldrinnak a Holdra lépésével sikerült teljesíteni. Őket még további öt űrhajóspáros követte, így összesen hat sikeres holdra szállást teljesítettek a NASA űrhajósai. Armstrongék holdra szállását négy, űrhajósokkal végrehajtott tesztrepülés előzte meg, míg egy sikertelen holdutazás is része volt a programnak. A repülések mellett egy tragédia is beárnyékolta az Apollo-programot, az első tesztrepülés előtti előkészületek közben három űrhajós, Gus Grissom, Ed White és Roger Chaffee halt meg az űrkabinjukban kitört tűz következtében.
 
 \begin{figure}[htb]
   \centering
@@ -95,11 +95,57 @@ A hidegháború két egymással vetekedő nagyhatalma az 1950-es évek végén, 
 Az USA vezetése elfogadta a szovjet kihívást és koncentrált erőfeszítést tett az űrteljesítmények területén az ellenfél előnyének behozására. E cél elérésére létrehozták a NASA-t, amely az összes korábban létrehozott repülési és űrhajózási kísérleti műhelyt vonta egy szervezetbe, hogy az erőket egyesítve minél hatékonyabban érjék el a kitűzött célt. 
 
 
+\section{Tippek és trükkök}
+
+\subsubsection*{Kiemelés}
+A kiemelésre az ízléses megoldás az \verb|\emph{}| használata. Ez normál szövegben \emph{dőlt szövegként} jelenik meg. Az \underline{aláhúzás} és a \textbf{félkövér szöveg} használata kerülendő. Lehet még ,,idézőjeleket'' használni, ezt kicsit furán kell írni: két vessző, és két aposztrof.
+
+Kódhoz használható a \texttt{monospace font} a \verb|\texttt{}| paranccsal, vagy a \verb!\verb||! parancs. A \verb!\verb||! határoló ,,zárójelei'' bármilyen karakterből állhatnak, ami nincs a verb belsejében. Pl. \verb|\verb!!|, \verb|\verb``|.
+
+\subsubsection*{Példa felsorolásra}
+\begin{itemize}
+  \item Neil A. Armstrong
+  \item Michael Collins
+  \item Edwin E. Aldrin Jr.
+\end{itemize}
+
+\subsubsection*{Én így szoktam hosszabb szöveget felsorolásba rakni}
+\begin{itemize}
+  \item \textbf{Vivamus nec lectus} Ut tellus rhoncus blandit. Vivamus suscipit lobortis turpis, a eleifend sem pellentesque eget. Sed id posuere urna. Ut nec orci sapien. Aenean pharetra, nulla vitae mattis fermentum, arcu arcu scelerisque nisi, ut tristique velit elit et magna.
+  \item \textbf{Cras consectetur} Purus sed ipsum pulvinar, eu bibendum nisl porta. Curabitur vehicula nisi rutrum, pretium lacus vel, sagittis tortor. Vivamus non sem at mauris consectetur ultricies ut non ligula. Ut justo mauris, lacinia id tempor eget, viverra vel orci.
+  \item \textbf{Etiam luctus feugiat} Aliquam tempus faucibus eros facilisis faucibus. Pellentesque eget posuere metus. Cras in sapien est. Nunc ut mi at nisl commodo congue. Nam sodales non magna ac mattis. In malesuada euismod nisi. Fusce egestas varius orci, non posuere nisl. Sed porttitor erat quis dolor sodales placerat. In mattis ex dolor, fringilla cursus ligula consequat eu. Etiam eget neque ac est placerat elementum. In quis ipsum elit. 
+\end{itemize}
+
+\subsubsection*{Számozott lista}
+\begin{enumerate}
+  \item Neil A. Armstrong
+  \item Michael Collins
+  \item Edwin E. Aldrin Jr.
+\end{enumerate} 
+
+\subsubsection*{Irodalmi hivatkozás}
+A hivatkozásokat BibTeX formátumban kell gyűjteni \cite{Lee1987}. Akadémiai oldalakról általában közvetlenül ilyet le lehet tölteni, de kézzel is könnyű elkészíteni \cite{Nasa}. A hivatkozások részleteit a \verb|bibliografia.bib| fájlba kell elhelyezni. Az ott megadott névvel hivatkozhatunk rá a szövegben a \verb|\cite| paranccsal \cite{Jeney2014}.
+
+\subsubsection*{Kereszthivatkozás}
+Az ábráknak, táblázatoknak, fejezeteknek megadhatunk egy \verb|\label| címkét. Ezzel tudunk rá hivatkozni a dokumentum más részeiben a \verb|\ref| paranccsal. Lásd \ref{fig:foto}. ábra, \ref{tab:repulesek}. táblázat. A labeleket érdemes típus szerint elnevezni, például \verb|fig:|, \verb|tab:|, \verb|sec:| előtaggal ellátni. 
+
+Jó trükk még a hivatkozás előtti névelő (\emph{a} vagy \emph{az}) automatizálása. Ehhez a \verb|\ref| helyett az \verb|\aref| (kisbetűs) vagy \verb|\Aref| (nagybetűs) parancsokat kell használni. Részletek \aref{tab:repulesek}. táblázatban.
+
+
+\subsubsection*{Példa forráskódra}
+\begin{lstlisting}[language=C]
+  #include <stdio.h>
+
+  void main() {
+      printf("Hello, Moon!");
+  }
+\end{lstlisting}
+
 %--------------------------------------------------------------------------------------
 % Bibliográfia
 %--------------------------------------------------------------------------------------
 \addcontentsline{toc}{section}{Irodalomjegyzék}
-\bibliography{bibliografia}
+{\footnotesize \bibliography{bibliografia}}
 
 
 %--------------------------------------------------------------------------------------
