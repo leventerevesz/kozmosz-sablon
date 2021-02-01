@@ -1,0 +1,148 @@
+
+%--------------------------------------------------------------------------------------
+% Betűtípus (az alap a Latin Modern)
+%--------------------------------------------------------------------------------------
+% 							% Latin Modern
+\usepackage{kpfonts}		% Palatino Linotype alternatíva
+% \usepackage{libertine}	% Times New Roman alternatíva
+% egyéb fontok: https://tug.org/FontCatalogue/
+
+%--------------------------------------------------------------------------------------
+% Változók
+%--------------------------------------------------------------------------------------
+\def\szerzok{\szerzoA}
+
+\makeatletter
+\ifthenelse{\equal{\szerzoB}{}}{}{\g@addto@macro\szerzok{, \szerzoB}}
+\ifthenelse{\equal{\szerzoC}{}}{}{\g@addto@macro\szerzok{, \szerzoC}}
+\ifthenelse{\equal{\szerzoD}{}}{}{\g@addto@macro\szerzok{, \szerzoD}}
+\makeatother
+
+\author{\szerzok}
+\title{\cim}
+
+%--------------------------------------------------------------------------------------
+% Oldal layout
+%--------------------------------------------------------------------------------------
+% we need to redefine the pagestyle plain
+% another possibility is to use the body of this command without \fancypagestyle
+% and use \pagestyle{fancy} but in that case the special pages
+% (like the ToC, the References, and the Chapter pages)remain in plane style
+
+\pagestyle{plain}
+\geometry{paper=a4paper}
+\geometry{inner=30mm, outer=20mm, top=20mm, bottom=25mm}
+
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+
+%--------------------------------------------------------------------------------------
+% Szövegbeállítások
+%--------------------------------------------------------------------------------------
+
+\singlespacing                  % egyszere sorköz
+\selectlanguage{magyar}         % nyelv (magyar.ldf)
+\setlength{\parindent}{2em}     % bekezdés behúzás mértéke (magyaros: 2em, angolos: 0)
+\setlength{\parskip}{8pt}       % bekezdések közti térköz
+\frenchspacing                  % mondatok közt is csak 1 "szóköznyi" kihagyás legyen
+
+% Ha inkább angol beállítások kellenek:
+	% \selectlanguage{english}
+	% \setlength{\parindent}{0em}
+	% \setlength{\parskip}{0.5em}
+	% \nonfrenchspacing
+	% \renewcommand{\figureautorefname}{Figure}
+	% \renewcommand{\tableautorefname}{Table}
+	% \renewcommand{\partautorefname}{Part}
+	% \renewcommand{\chapterautorefname}{Chapter}
+	% \renewcommand{\sectionautorefname}{Section}
+	% \renewcommand{\subsectionautorefname}{Section}
+	% \renewcommand{\subsubsectionautorefname}{Section}
+
+
+\sloppy                                 % Margón túllógó sorok tiltása.
+\widowpenalty=10000 \clubpenalty=10000  % A fattyú- és árvasorok elkerülése
+\def\hyph{-\penalty0\hskip0pt\relax}    % Kötőjeles szavak elválasztásának engedélyezése
+
+
+%--------------------------------------------------------------------------------------
+% Bibliográfia stílusa
+%--------------------------------------------------------------------------------------
+\bibliographystyle{include/huplain}
+
+
+%--------------------------------------------------------------------------------------
+% Linkek és pdf címkék (hyperref)
+%--------------------------------------------------------------------------------------
+\hypersetup{
+    % bookmarks=true,               % show bookmarks bar?
+    unicode=true,                   % non-Latin characters in Acrobat's bookmarks
+    pdftitle={\cim},                % title
+    pdfauthor={\szerzok},           % author
+    pdfsubject={},                  % subject of the document
+    pdfcreator={},                  % creator of the document
+    pdfproducer={},                 % producer of the document
+    pdfkeywords={},                 % list of keywords (separate then by comma)
+    pdfnewwindow=true,              % links in new window
+    colorlinks=true,                % false: boxed links; true: colored links
+    linkcolor=black,                % color of internal links
+    citecolor=black,                % color of links to bibliography
+    filecolor=black,                % color of file links
+    urlcolor=black                  % color of external links
+}
+
+
+%--------------------------------------------------------------------------------------
+% listings csomag (forráskód megjelenítés) beállításai
+%--------------------------------------------------------------------------------------
+\definecolor{lightgray}{rgb}{0.95,0.95,0.95}
+\lstset{
+	basicstyle=\scriptsize\ttfamily, % print whole listing small
+	keywordstyle=\color{black}\bfseries, % bold black keywords
+	identifierstyle=, % nothing happens
+	% default behavior: comments in italic, to change use
+	% commentstyle=\color{green}, % for e.g. green comments
+	stringstyle=\scriptsize,
+	showstringspaces=false, % no special string spaces
+	aboveskip=3pt,
+	belowskip=3pt,
+	backgroundcolor=\color{lightgray},
+	columns=flexible,
+	keepspaces=true,
+	escapeinside={(*@}{@*)},
+	captionpos=b,
+	breaklines=true,
+	frame=single,
+	float=!ht,
+	tabsize=2,
+	literate=*
+		{á}{{\'a}}1	{é}{{\'e}}1	{í}{{\'i}}1	{ó}{{\'o}}1	{ö}{{\"o}}1	{ő}{{\H{o}}}1	{ú}{{\'u}}1	{ü}{{\"u}}1	{ű}{{\H{u}}}1
+		{Á}{{\'A}}1	{É}{{\'E}}1	{Í}{{\'I}}1	{Ó}{{\'O}}1	{Ö}{{\"O}}1	{Ő}{{\H{O}}}1	{Ú}{{\'U}}1	{Ü}{{\"U}}1	{Ű}{{\H{U}}}1
+}
+
+
+%--------------------------------------------------------------------------------------
+% Saját parancsok
+%--------------------------------------------------------------------------------------
+\newcommand{\code}[1]{{\upshape\ttfamily\scriptsize\indent #1}}
+% A hivatkozások közt így könnyebb DOI-t megadni: \doi{xxxx.yyyy}
+\newcommand{\doi}[1]{DOI: \href{http://dx.doi.org/\detokenize{#1}}{\raggedright{\texttt{\detokenize{#1}}}}}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator{\sign}{sgn}
+\DeclareMathOperator{\rot}{rot}
+
+%--------------------------------------------------------------------------------------
+% Képaláírás stílusa
+%--------------------------------------------------------------------------------------
+\captionsetup[figure]{
+	width=.75\textwidth,
+	aboveskip=10pt}
+
+\renewcommand{\captionlabelfont}{\it}
+\renewcommand{\captionfont}{\footnotesize\it}
+
+%--------------------------------------------------------------------------------------
+% Elválasztás kivételei
+%--------------------------------------------------------------------------------------
+\hyphenation{Shakes-peare Mar-seilles ár-víz-tű-rő tü-kör-fú-ró-gép}
